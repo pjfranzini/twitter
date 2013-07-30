@@ -6,7 +6,6 @@
 <h2><%= @user.handle %>'s Tweets</h2>
 
 <p><%= image_tag(@user.avatar_url) if @user.avatar? %></p>
-<p><%= image_tag(@user.avatar_two_url) if @user.avatar_two? %></p>
 <ul>
   <% @tweets.each do |tweet| %>
     <li><%= tweet.content %></li>

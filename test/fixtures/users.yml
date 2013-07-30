@@ -3,11 +3,11 @@
 one:
   name: MyString
   email: MyString
-  image_url: MyString
+  avatar: MyString
   handle: MyString
 
 two:
   name: MyString
   email: MyString
-  image_url: MyString
+  avatar: MyString
   handle: MyString

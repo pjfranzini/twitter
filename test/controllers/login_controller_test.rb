@@ -8,7 +8,7 @@ class LoginControllerTest < ActionController::TestCase
 
   test "should get logout" do
     get :logout
-    assert_response :success
+    assert_redirected_to tweets_path
   end
 
 end

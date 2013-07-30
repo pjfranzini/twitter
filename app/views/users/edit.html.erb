@@ -14,7 +14,14 @@
   <%= f.text_field :handle %></div>
 
 <div>
-  Avatar: <%= f.file_field :avatar %></div>
+  Avatar: <%= f.file_field :avatar %>
+  <p>
+    <label>
+      <%= f.check_box :remove_avatar %>
+      Remove avatar
+    </label>
+  </p>
+  </div>
 
       <div>
       <%= f.check_box :remove_avatar %>

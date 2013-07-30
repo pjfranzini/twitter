@@ -8,8 +8,9 @@ Twitter::Application.routes.draw do
   post '/login', to: 'login#create_session'
   get '/logout', to: 'login#logout'
   get '/register', to: 'users#new'
+
   resources :tweets, except: ['edit', 'update']
-  root 'welcome#index'
+  root 'tweets#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -21,15 +21,15 @@ class TweetsControllerTest < ActionController::TestCase
     assert_redirected_to login_path
   end
 
+  test "post create should redirect when not logged in" do
+    post :create, tweet: {content: "Hello"}
+    assert_redirected_to login_path
+  end
+
   test "should get new when logged in" do
     login_as(users(:one))
     get :new
     assert_response :success
-  end
-
-  test "post create should redirect when not logged in" do
-    post :create, tweet: {content: "Hello"}
-    assert_redirected_to login_path
   end
 
   test "should post to create when logged in" do

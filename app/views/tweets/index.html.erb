@@ -1,0 +1,18 @@
+<h1>My Tweets</h1>
+<table>
+<tr>
+  <td>Tweet</td>
+  <td>Character Length</td>
+  <td>Posted on</td>
+</tr>
+<% @tweets.each do |tweet| %>
+  <tr>
+  <td><%= link_to tweet.content, tweet %></td>
+  <td><%= tweet.content.size %></td>
+  <td><%= tweet.created_at %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<p><%= link_to 'Add a Tweet', new_tweet_path %></p>

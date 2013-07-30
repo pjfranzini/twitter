@@ -1,0 +1,25 @@
+<h1>Sign up to Fake Twitter!</h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url %>
+  </div>
+
+  <div>
+    <%= f.label :handle %>
+    <%= f.text_field :handle %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @current_user, html: {multipart: true} do |f| %>
+<div>
+  <%= f.label :name %>
+  <%= f.text_field :name %></div>
+
+<div>
+  <%= f.label :email  %>
+  <%= f.text_field :email %></div>
+
+<div>
+  <%= f.label :handle %>
+  <%= f.text_field :handle %></div>
+
+<div>
+  Avatar: <%= f.file_field :avatar %></div>
+
+  <%= f.submit 'Save Settings' %>
+
+<% end %>

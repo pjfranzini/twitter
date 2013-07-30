@@ -1,0 +1,10 @@
+<p><%= notice %></p>
+<h1>New Tweets</h1>
+
+<%= form_for @tweet do |f| %>
+  <div>
+    <%= f.label :content, 'Tweet:' %>
+    <%= f.text_area :content %>
+  </div>
+  <%= f.submit %>
+<% end %>

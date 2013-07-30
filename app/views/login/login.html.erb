@@ -1,0 +1,10 @@
+<h1>Log in to Twitter</h1>
+
+<%= form_for @user, url: {action: "create_session"} do |f| %>
+  <div>
+  Email: <%= f.text_field :email %>
+  </div>
+
+  <%= f.submit 'Login' %>
+
+  <% end %>

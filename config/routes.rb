@@ -1,13 +1,11 @@
 Twitter::Application.routes.draw do
-  get "login/login"
-  get "login/logout"
   resources :users, except: [:edit]
   get '/profile', to: "users#edit"
+  get '/register', to: 'users#new'
 
   get '/login', to: 'login#login'
   post '/login', to: 'login#create_session'
   get '/logout', to: 'login#logout'
-  get '/register', to: 'users#new'
 
   resources :tweets, except: ['edit', 'update']
   root 'tweets#index'

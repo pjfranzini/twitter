@@ -16,6 +16,11 @@
 <div>
   Avatar: <%= f.file_field :avatar %></div>
 
+      <div>
+      <%= f.check_box :remove_avatar %>
+      Remove avatar
+    </div>
+
   <%= f.submit 'Save Settings' %>
 
 <% end %>

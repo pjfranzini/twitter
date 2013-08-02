@@ -1,0 +1,7 @@
+<h1>Welcome</h1>
+
+<p>Hi <%= @user.name %>, </p>
+
+<p>Click here to activate yr acct:
+  <%= link_to "Confirm", confirm_user_url(@user, host: "thistwitter.com") %>
+</p>

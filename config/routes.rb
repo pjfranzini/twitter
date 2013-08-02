@@ -1,5 +1,14 @@
 Twitter::Application.routes.draw do
-  resources :users, except: [:edit]
+  resources :users, except: [:edit] do
+    member do
+      get 'confirm' # /users/:id/confirm
+      # adds a restful url verb
+    end
+  end
+  # member -- /user/1 vs /users
+  # collection applies to all the users
+  # collection do
+  #   get 'list'  # /users/list
   get '/profile', to: "users#edit"
   get '/register', to: 'users#new'
 

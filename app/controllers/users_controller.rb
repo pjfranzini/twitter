@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
+    UserMailer.confirm_email(@user).deliver if @user
 
     redirect_to user_path(@user)
   end
@@ -25,9 +26,13 @@ class UsersController < ApplicationController
     redirect_to @current_user
   end
 
+  def confirm
+    head :ok
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :email, :image_url, :handle, :avatar, :remove_avatar)
+    params.require(:user).permit(:name, :email, :image_url, :handle, :avatar, :remove_avatar, :password, :password_confirmation)
   end
 
 end

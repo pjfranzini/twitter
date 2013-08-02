@@ -4,10 +4,17 @@ class LoginController < ApplicationController
   end
 
   def create_session
-    @user = User.find_by(email: params[:user][:email])
-    session[:user_id] = @user.id
+    user = User.find_by(email: params[:user][:email])
 
-    redirect_to user_path(@user)
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+
+      redirect_to user_path(user), notice: "Yr logged in as #{user.email}"
+
+    else
+      flash[:error] = "Incorrect password"
+      redirect_to new_user_path
+    end
   end
 
   def logout

@@ -6,10 +6,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    UserMailer.confirm_email(@user).deliver if @user
 
-    redirect_to user_path(@user)
+    if @user.save
+      UserMailer.confirm_email(@user).deliver
+      redirect_to user_path(@user)
+    else
+      # flash[:error] = "User could not be saved."
+      render action: :new
+    end
   end
 
   def show
